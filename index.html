@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>This Song For You</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #fff8dc;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      width: 80%;
+      max-width: 600px;
+    }
+    .slide {
+      display: none;
+      font-size: 1.2em;
+      animation: fadeIn 1.5s;
+    }
+    .slide.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .sunflower {
+      width: 150px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    footer {
+      margin-top: 40px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="sunflower.png" alt="Sunflower" class="sunflower" />
+    <div class="slide active">Kayanya berat banget ya akhir akhir ini , mungkin lebih banyak nangis nya lebih banyak ngeluh nya lebih banyak sakitnya , how u can deal with that all hurt feeling?</div>
+    <div class="slide">I know you been having a rough day lately and you feel like things are falling apart you don't seem to Geet anything right lately. You been stressing out and you feel like you failure in this life</div>
+    <div class="slide">But hang in there sweety! Its just part of our life i know u are gonna be okay and thing gonna be okay, if not today it Will be tomorrow or someday, just trust it</div>
+    <div class="slide">So cheers up and proud of you , Cipa</div>
+    <footer>THANK FOR ALWAYS FIGHTING FOR UR LIFE CIPA</footer>
+    <audio autoplay loop>
+      <source src="song.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 6000);
+  </script>
+</body>
+</html>
